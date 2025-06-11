@@ -1,0 +1,478 @@
+<!-- Menu -->
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a href="<?php echo e(route('index')); ?>" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <?php if($settings['logo'] && file_exists(public_path($settings['logo']))): ?>
+                    <img id="logo-image" src="<?php echo e(asset($settings['logo'])); ?>" alt="<?php echo e($settings['name']); ?>" width="180">
+                    <img id="logo-dark-image" src="<?php echo e(asset($settings['logo_black'])); ?>" alt="<?php echo e($settings['name']); ?>"
+                        width="180">
+                    <img id="favicon-image" src="<?php echo e(asset($settings['favicon'])); ?>" alt="<?php echo e($settings['name']); ?>"
+                        width="25">
+                <?php else: ?>
+                    <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <path
+                                d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                                id="path-1"></path>
+                            <path
+                                d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                                id="path-3"></path>
+                            <path
+                                d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                                id="path-4"></path>
+                            <path
+                                d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                                id="path-5"></path>
+                        </defs>
+                        <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                                <g id="Icon" transform="translate(27.000000, 15.000000)">
+                                    <g id="Mask" transform="translate(0.000000, 8.000000)">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <use fill="<?php echo e($settings['primary_color']); ?>" xlink:href="#path-1"></use>
+                                        <g id="Path-3" mask="url(#mask-2)">
+                                            <use fill="<?php echo e($settings['primary_color']); ?>" xlink:href="#path-3"></use>
+                                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                        </g>
+                                        <g id="Path-4" mask="url(#mask-2)">
+                                            <use fill="<?php echo e($settings['primary_color']); ?>" xlink:href="#path-4"></use>
+                                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                                        </g>
+                                    </g>
+                                    <g id="Triangle"
+                                        transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+                                        <use fill="<?php echo e($settings['primary_color']); ?>" xlink:href="#path-5"></use>
+                                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                <?php endif; ?>
+            </span>
+            
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+            <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item <?php echo e(Route::is('home') ? 'active' : ''); ?>">
+            <a href="<?php echo e(route('home')); ?>" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-smile"></i>
+                <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Dashboard'); ?>"><?php echo app('translator')->get('l.Dashboard'); ?></div>
+            </a>
+        </li>
+
+        <?php if(count(auth()->user()->getRoleNames()) == 0): ?> <!-- users links -->
+            <?php echo $__env->make('themes.default.layouts.back.headerUsers', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+            <!-- Account & Settings -->
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Account &amp; Settings'); ?>"><?php echo app('translator')->get('l.Account &amp; Settings'); ?></span>
+            </li>
+        <?php else: ?>
+            <!-- admins links -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show lectures', 'show lives', 'show quizzes'])): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Content & Quizzes'); ?>"><?php echo app('translator')->get('l.Lectures & Lives & Quizzes'); ?></span>
+                </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show lectures')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/lectures*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.lectures')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-play-circle"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Lectures'); ?>"><?php echo app('translator')->get('l.Lectures'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show lives')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/lives*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.lives')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-video"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Lives'); ?>"><?php echo app('translator')->get('l.Lives'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show quizzes')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/quizzes*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.quizzes')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-list-check"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Quizzes'); ?>"><?php echo app('translator')->get('l.Quizzes'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <!-- courses -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show courses', 'upload grades'])): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Courses & Grades'); ?>"><?php echo app('translator')->get('l.Courses & Grades'); ?></span>
+                </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show courses')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/courses*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.courses')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-book"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Courses'); ?>"><?php echo app('translator')->get('l.Courses'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('upload grades')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/grades*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.grades')); ?>" class="menu-link">
+                            <i class='menu-icon bx bx-food-menu'></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Grades'); ?>"><?php echo app('translator')->get('l.Grades'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <!-- students & support -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show students', 'show invoices', 'show tickets', 'show newsletters_subscribers', 'show admissions'])): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Students & Support'); ?>"><?php echo app('translator')->get('l.Students & Support'); ?></span>
+                </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show students')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/students*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.students')); ?>" class="menu-link">
+                            <i class="menu-icon fas fa-user-group" style="font-size: 1.0rem !important;"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Students'); ?>"><?php echo app('translator')->get('l.Students'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show invoices')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/invoices*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.invoices')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-file"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Invoices'); ?>"><?php echo app('translator')->get('l.Invoices'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show tickets')): ?>
+                    <?php
+                        $newTickets = \App\Models\Ticket::where('status', 'in_progress')->count();
+                    ?>
+                    <li class="menu-item <?php echo e(request()->is('*/tickets*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.tickets')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Support Tickets'); ?>"><?php echo app('translator')->get('l.Support Tickets'); ?></div>
+                            <?php if($newTickets > 0): ?>
+                                <span class="badge rounded-pill bg-danger ms-auto"><?php echo e($newTickets); ?></span>
+                            <?php endif; ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show admissions')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/admissions*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.admissions')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-file"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Admissions'); ?>"><?php echo app('translator')->get('l.Admissions'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show newsletters_subscribers')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/subscribers*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.subscribers')); ?>" class="menu-link">
+                            <i class="menu-icon fa fa-paper-plane" style="font-size: 1.0rem !important;"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Newsletters Subscribers'); ?>">
+                                <?php echo app('translator')->get('l.Newsletters Subscribers'); ?>
+                            </div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <li class="menu-item <?php echo e(request()->is('*/notes*') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('dashboard.admins.notes')); ?>" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-note"></i>
+                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Notes'); ?>"><?php echo app('translator')->get('l.Notes'); ?></div>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show branches', 'show colleges'])): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Branches & Colleges'); ?>"><?php echo app('translator')->get('l.Branches & Colleges'); ?></span>
+                </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show branches')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/branches*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.branches')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-building"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Branches'); ?>"><?php echo app('translator')->get('l.Branches'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show colleges')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/colleges*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.colleges')); ?>" class="menu-link">
+                            <i class='menu-icon bx bxs-objects-horizontal-center'></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Colleges'); ?>"><?php echo app('translator')->get('l.Colleges'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
+            <!-- pages & blog -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show blog', 'show pages', 'show team_members', 'show questions', 'show contact_us'])): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Pages & Blog'); ?>"><?php echo app('translator')->get('l.Pages & Blog'); ?></span>
+                </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show blog', 'show blog_category'])): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/blog*') ? 'active open' : ''); ?>">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-edit-alt"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Blog'); ?>"><?php echo app('translator')->get('l.Blog'); ?></div>
+                        </a>
+                        <ul class="menu-sub">
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show blog')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/blog/articles*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.blogs.articles')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Articles'); ?>"><?php echo app('translator')->get('l.Articles'); ?></div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show blog_category')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/blog/categories*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.blogs.categories')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Blog Categories'); ?>"><?php echo app('translator')->get('l.Blog Categories'); ?></div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show pages', 'show team_members', 'show questions', 'show contact_us'])): ?>
+                    <li
+                        class="menu-item <?php echo e(request()->is('*/pages*') || request()->is('*/teams*') || request()->is('*/questions*') || request()->is('*/contact-us*') ? 'active open' : ''); ?>">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-layout"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Pages'); ?>"><?php echo app('translator')->get('l.Pages'); ?></div>
+                            <?php $newRequests = \App\Models\Contact::where('status', 0)->count(); ?>
+                            <?php if($newRequests > 0): ?>
+                                <span class="badge rounded-pill bg-danger ms-auto"><?php echo e($newRequests); ?></span>
+                            <?php endif; ?>
+                        </a>
+                        <ul class="menu-sub">
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show pages')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/pages/home') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.pages', ['page' => 'home'])); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Home Page'); ?>"><?php echo app('translator')->get('l.Home Page'); ?></div>
+                                    </a>
+                                </li>
+                                <li class="menu-item <?php echo e(request()->is('*/pages/about') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.pages', ['page' => 'about'])); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.About Page'); ?>"><?php echo app('translator')->get('l.About Page'); ?></div>
+                                    </a>
+                                </li>
+                                <li class="menu-item <?php echo e(request()->is('*/pages/privacy') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.pages', ['page' => 'privacy'])); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Privacy Policy'); ?>"><?php echo app('translator')->get('l.Privacy Policy'); ?></div>
+                                    </a>
+                                </li>
+                                <li class="menu-item <?php echo e(request()->is('*/pages/terms') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.pages', ['page' => 'terms'])); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Terms & Conditions'); ?>"><?php echo app('translator')->get('l.Terms & Conditions'); ?></div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show team_members')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/teams*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.teams')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Team Members'); ?>"><?php echo app('translator')->get('l.Team Members'); ?></div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show questions')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/questions*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.questions')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Questions'); ?>"><?php echo app('translator')->get('l.Questions'); ?></div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show contact_us')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/contact-us*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.contacts')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Contact Us'); ?>"><?php echo app('translator')->get('l.Contact Us'); ?></div>
+                                        <?php if($newRequests > 0): ?>
+                                            <span class="badge rounded-pill bg-danger ms-auto"><?php echo e($newRequests); ?></span>
+                                        <?php endif; ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <!-- Users & Roles -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show users', 'show roles'])): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Users & Roles'); ?>"><?php echo app('translator')->get('l.Users & Roles'); ?></span>
+                </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show users')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/users*') ? 'active open' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.users')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-user"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Users'); ?>"><?php echo app('translator')->get('l.Users'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show tasks', 'show chats'])): ?>
+                    <?php
+                        $newTasks = \App\Models\Task::where('status', 'new')
+                            ->where('assigned_to', auth()->user()->id)
+                            ->count();
+
+                        // حساب عدد الرسائل غير المقروءة بالطريقة الجديدة
+                        $totalChatMessages = 0;
+                        if (auth()->check() && auth()->user()->can('show chats')) {
+                            $user = auth()->user();
+                            $chats = \App\Models\Chat::whereHas('participants', function ($query) use ($user) {
+                                $query->where('user_id', $user->id);
+                            })->with('participants.user')->get();
+
+                            foreach ($chats as $chat) {
+                                // الحصول على مشاركة المستخدم الحالي
+                                $participant = $chat->participants->where('user_id', $user->id)->first();
+
+                                if ($participant) {
+                                    // استخدام الوظيفة الجديدة لحساب عدد الرسائل غير المقروءة
+                                    $totalChatMessages += $participant->unreadMessagesCount();
+                                }
+                            }
+                        }
+
+                        $totalAlerts = $newTasks + $totalChatMessages;
+                    ?>
+                    <li class="menu-item <?php echo e(request()->is('*/tasks*') || request()->is('*/chats*') ? 'active open' : ''); ?>">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Tasks & Chats'); ?>">
+                                <?php echo app('translator')->get('l.Tasks & Chats'); ?>
+                            </div>
+                            <?php if($totalAlerts > 0): ?>
+                                <span class="badge rounded-pill bg-danger ms-auto"><?php echo e($totalAlerts); ?></span>
+                            <?php endif; ?>
+                        </a>
+                        <ul class="menu-sub">
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show tasks')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/tasks*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.tasks')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Tasks'); ?>"><?php echo app('translator')->get('l.Tasks'); ?></div>
+                                        <?php if($newTasks > 0): ?>
+                                            <span class="badge rounded-pill bg-danger ms-auto"><?php echo e($newTasks); ?></span>
+                                        <?php endif; ?>
+                                    </a>
+                                </li>
+                                <li class="menu-item <?php echo e(request()->is('*/calendar*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.tasks-calendar')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Calendar'); ?>"><?php echo app('translator')->get('l.Calendar'); ?></div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show chats')): ?>
+                                <li class="menu-item <?php echo e(request()->is('*/chats*') ? 'active' : ''); ?>">
+                                    <a href="<?php echo e(route('dashboard.admins.chats')); ?>" class="menu-link">
+                                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Chats'); ?>"><?php echo app('translator')->get('l.Chats'); ?></div>
+                                        <?php if($totalChatMessages > 0): ?>
+                                            <span class="badge rounded-pill bg-danger ms-auto"><?php echo e($totalChatMessages); ?></span>
+                                        <?php endif; ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show roles')): ?>
+                    <li class="menu-item <?php echo e(request()->is('*/roles*') ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('dashboard.admins.roles')); ?>" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-check-shield"></i>
+                            <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Roles'); ?>"><?php echo app('translator')->get('l.Roles'); ?></div>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <!-- Statistics -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['show statistics', 'show visitors_statistics'])): ?>
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Statistics'); ?>"><?php echo app('translator')->get('l.Statistics'); ?></span>
+            </li>
+            <li class="menu-item <?php echo e(request()->is('*/statistics*') ? 'active open' : ''); ?>">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
+                    <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Statistics'); ?>"><?php echo app('translator')->get('l.Statistics'); ?></div>
+                </a>
+                <ul class="menu-sub">
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show visitors_statistics')): ?>
+                        <li class="menu-item <?php echo e(Route::is('dashboard.admins.statistics-visitors') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(route('dashboard.admins.statistics-visitors')); ?>" class="menu-link">
+                                <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Visitors Statistics'); ?>"><?php echo app('translator')->get('l.Visitors Statistics'); ?></div>
+                            </a>
+                        </li>
+                        <li class="menu-item <?php echo e(Route::is('dashboard.admins.statistics-google') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(route('dashboard.admins.statistics-google')); ?>" class="menu-link">
+                                <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Google Analytics'); ?>"><?php echo app('translator')->get('l.Google Analytics'); ?></div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show money_statistics')): ?>
+                        <li class="menu-item <?php echo e(Route::is('dashboard.admins.statistics-money') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(route('dashboard.admins.statistics-money')); ?>" class="menu-link">
+                                <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Money Statistics'); ?>"><?php echo app('translator')->get('l.Money Statistics'); ?></div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </li>
+        <?php endif; ?>
+
+            <!-- Settings -->
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('show settings')): ?>
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Account &amp; Settings'); ?>"><?php echo app('translator')->get('l.Account &amp; Settings'); ?></span>
+                </li>
+                <li class="menu-item <?php echo e(request()->is('*/settings*') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('dashboard.admins.settings')); ?>" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-cog"></i>
+                        <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Settings'); ?>"><?php echo app('translator')->get('l.Settings'); ?></div>
+                    </a>
+                </li>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <!-- Account -->
+        <li class="menu-item <?php echo e(Route::is('dashboard.profile') ? 'active' : ''); ?>">
+            <a href="<?php echo e(route('dashboard.profile')); ?>" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.My Account'); ?>"><?php echo app('translator')->get('l.My Account'); ?></div>
+            </a>
+        </li>
+
+        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('access maintenance')): ?>
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text" data-i18n="<?php echo app('translator')->get('l.Misc'); ?>"><?php echo app('translator')->get('l.Misc'); ?></span>
+            </li>
+            <li class="menu-item">
+                <a href="<?php echo e(env('support_url')); ?>" target="_blank" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-support"></i>
+                    <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Support'); ?>"><?php echo app('translator')->get('l.Support'); ?></div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="<?php echo e(env('docs_url')); ?>" target="_blank" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div class="text-truncate" data-i18n="<?php echo app('translator')->get('l.Documentation'); ?>"><?php echo app('translator')->get('l.Documentation'); ?></div>
+                </a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</aside>
+<!-- / Menu -->
+<?php /**PATH D:\laragon\www\laravel\pending\eelu\resources\views/themes/default/layouts/back/header.blade.php ENDPATH**/ ?>

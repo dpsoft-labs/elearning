@@ -1,0 +1,236 @@
+/* تحسينات متجاوبة لواجهة الدردشة في الشاشات الصغيرة فقط - بواسطة dp soft */
+
+/* لا يوجد تعديلات على الشاشات الكبيرة - نبدأ التحسينات من الشاشات المتوسطة والصغيرة فقط */
+
+/* تحسينات الشاشات المتوسطة (الأجهزة اللوحية) */
+@media (max-width: 768px) {
+  /* تحسينات فقاعات الرسائل في الشاشات المتوسطة فقط */
+  .chat-message-text {
+    max-width: 250px;
+  }
+
+  /* تحسينات مُنتقي الإيموجي للشاشات المتوسطة */
+  .emoji-picker {
+    width: 250px;
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 200px;
+    z-index: 1050;
+  }
+
+  .emoji-list {
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  }
+
+  .emoji {
+    font-size: 18px;
+    min-width: 30px;
+    height: 30px;
+  }
+
+  /* تحسينات للرسائل الصوتية */
+  .voice-message {
+    max-width: 220px;
+  }
+}
+
+/* تحسينات خاصة للهواتف الصغيرة فقط */
+@media (max-width: 576px) {
+  /* تحسين شكل المحادثة بشكل عام */
+  .app-chat-history {
+    position: relative;
+  }
+
+  /* تبسيط الأزرار في حقل الكتابة للشاشات الصغيرة */
+  .chat-history-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    padding: 0.5rem 0.75rem !important;
+    margin: 0.5rem !important;
+    border-radius: 20px !important;
+    background-color: var(--bs-paper-bg);
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px);
+    width: calc(100% - 1rem);
+    animation: slide-up 0.3s ease;
+  }
+
+  /* تأكيد على عدم إضافة flex-wrap لمنع النزول لسطر جديد على الشاشات الكبيرة */
+  .chat-history-footer form {
+    flex-wrap: nowrap !important;
+  }
+
+  /* تحسين حقل النص مع مؤثرات بصرية جذابة */
+  .message-input {
+    min-height: 42px !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease;
+    background-color: rgba(245, 245, 245, 0.5) !important;
+  }
+
+  .message-input:focus {
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25) !important;
+    background-color: #fff !important;
+  }
+
+  /* تحسين أزرار التفاعل */
+  .chat-history-footer .btn,
+  .chat-history-footer .voice-recorder-btn {
+    border-radius: 50% !important;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .chat-history-footer .btn:active,
+  .chat-history-footer .voice-recorder-btn:active {
+    transform: scale(0.92);
+  }
+
+  /* نص زر الإرسال يظهر فقط في الشاشات الكبيرة */
+  .send-msg-btn .d-md-inline-block {
+    display: none !important;
+  }
+
+  /* تقليل حجم أيقونات الأزرار */
+  .chat-history-footer .bx-sm {
+    font-size: 1.2rem !important;
+  }
+
+  /* تبسيط مؤقت التسجيل الصوتي */
+  .voice-recorder-timer {
+    min-width: 40px;
+    font-size: 12px;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    padding: 3px 8px;
+    border-radius: 12px;
+    color: var(--bs-primary);
+  }
+
+  /* إضافة مؤثرات تفاعلية لأزرار التسجيل */
+  .voice-recorder-btn.recording {
+    background-color: #ff4d4f !important;
+    box-shadow: 0 0 0 5px rgba(255, 77, 79, 0.2);
+  }
+
+  /* تحسين أزرار التسجيل الصوتي */
+  .voice-action-btn {
+    width: 36px !important;
+    height: 36px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* تحسين فقاعات الرسائل */
+  .chat-message-text {
+    max-width: 200px;
+    padding: 0.6rem 0.85rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* إضافة تأثيرات بصرية للرسائل */
+  .chat-message-right .chat-message-text {
+    box-shadow: 0 2px 10px rgba(var(--bs-primary-rgb), 0.3) !important;
+  }
+
+  /* تحسين عرض الرسائل الصوتية في الشاشات الصغيرة */
+  .voice-message {
+    max-width: 180px;
+    padding: 6px 10px !important;
+    border-radius: 24px !important;
+  }
+
+  .voice-message-wave {
+    height: 18px;
+  }
+
+  .voice-message-play {
+    transition: transform 0.2s ease;
+  }
+
+  .voice-message-play:active {
+    transform: scale(0.95);
+  }
+
+  /* تحسين قائمة جهات الاتصال في الشاشات الصغيرة */
+  .chat-contact-list-item {
+    padding: 0.5rem 0.6rem !important;
+    margin: 0.3rem 0.5rem !important;
+    transition: all 0.2s ease;
+    border-radius: 10px !important;
+  }
+
+  .chat-contact-list-item:active {
+    transform: scale(0.98);
+  }
+
+  /* تحسينات لمنع تداخل عناصر الواجهة */
+  .chat-history-body {
+    padding-bottom: 100px !important;
+  }
+
+  /* إضافة تأثير ظل على الرأس عند التمرير */
+  .chat-history-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  /* تحسين تأثير عائم لحقل الكتابة */
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* تعديلات للدعم لوضع الظلام فقط للشاشات الصغيرة */
+@media (max-width: 576px) {
+  [data-bs-theme=dark] .chat-history-footer {
+    background-color: rgba(43, 44, 64, 0.95);
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  [data-bs-theme=dark] .message-input {
+    background-color: rgba(50, 50, 70, 0.5) !important;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  [data-bs-theme=dark] .message-input:focus {
+    background-color: rgba(60, 60, 80, 0.7) !important;
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25) !important;
+  }
+
+  [data-bs-theme=dark] .voice-recorder-timer {
+    background-color: rgba(var(--bs-primary-rgb), 0.2);
+  }
+}
+
+/* تحسينات خاصة لدعم RTL للشاشات الصغيرة */
+@media (max-width: 576px) {
+  [dir="rtl"] .voice-recorder-timer {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .voice-message-play {
+    margin-left: 8px;
+    margin-right: 0;
+  }
+}
